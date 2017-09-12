@@ -1,13 +1,13 @@
 ######
-pyudev
+yynas
 ######
 
-.. image:: https://secure.travis-ci.org/pyudev/pyudev.png?branch=develop
-   :target: http://travis-ci.org/pyudev/pyudev
+.. image:: https://secure.travis-ci.org/yynas/pyudev.png?branch=develop
+   :target: http://travis-ci.org/yynas/pyudev
 
-http://pyudev.readthedocs.org
+http://yynas.readthedocs.org
 
-pyudev is a LGPL_ licensed, pure Python_ binding for libudev_, the device and
+yynas is a LGPL_ licensed, pure Python_ binding for libudev_, the device and
 hardware management and information library for Linux.  It supports almost all
 libudev_ functionality. You can enumerate devices, query device properties and
 attributes or monitor devices, including asynchronous monitoring with threads,
@@ -21,11 +21,11 @@ as found on dated Linux systems may work, but are not officially supported.
 Usage
 -----
 
-Usage of pyudev is quite simply thanks to the power of the underlying udev
+Usage of yynas is quite simply thanks to the power of the underlying udev
 library. Getting the labels of all partitions just takes a few lines:
 
->>> import pyudev
->>> context = pyudev.Context()
+>>> import yynas
+>>> context = yynas.Context()
 >>> for device in context.list_devices(subsystem='block', DEVTYPE='partition'):
 ...     print(device.get('ID_FS_LABEL', 'unlabeled partition'))
 ...
@@ -50,12 +50,22 @@ following guidelines:
   the description of your issue.
 
 
+Build
+-----------
+
+release tgz file::
+    python setup.py sdist
+
+release rpm file::
+    python setup.py bdist_rpm
+
+
 Development
 -----------
 
 The source code is hosted on GitHub_::
 
-   git clone git://github.com/pyudev/pyudev.git
+   git clone git://github.com/yynas/pyudev.git
 
 Please fork the repository and send pull requests with your fixes or new
 features, but respect the following guidelines:
@@ -71,7 +81,7 @@ features, but respect the following guidelines:
 - Squash commits on the topic branch before opening a pull request.
 - Respect :pep:`8` (use pep8_ to check your coding style compliance).
 - Add unit tests if possible (refer to the `testsuite documentation
-  <http://pyudev.readthedocs.org/en/latest/tests/index.html>`_).
+  <http://yynas.readthedocs.org/en/latest/tests/index.html>`_).
 - Add API documentation in docstrings.
 - Open a `pull request <https://help.github.com/articles/using-pull-requests>`_
   that relates to but one subject with a clear title and description in
@@ -83,10 +93,10 @@ features, but respect the following guidelines:
 .. _CPython: http://www.python.org/
 .. _PyPy: http://www.pypy.org/
 .. _libudev: http://www.kernel.org/pub/linux/utils/kernel/hotplug/libudev/
-.. _website: http://pyudev.readthedocs.org
-.. _user guide: http://pyudev.readthedocs.org/en/latest/guide.html
-.. _api reference: http://pyudev.readthedocs.org/en/latest/api/index.html
-.. _issue tracker: http://github.com/lunaryorn/pyudev/issues
-.. _GitHub: http://github.com/lunaryorn/pyudev
+.. _website: http://yynas.readthedocs.org
+.. _user guide: http://yynas.readthedocs.org/en/latest/guide.html
+.. _api reference: http://yynas.readthedocs.org/en/latest/api/index.html
+.. _issue tracker: http://github.com/lunaryorn/yynas/issues
+.. _GitHub: http://github.com/lunaryorn/yynas
 .. _git: http://www.git-scm.com/
 .. _pep8: http://pypi.python.org/pypi/pep8/

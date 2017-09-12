@@ -52,7 +52,6 @@ setuptools.setup(
 	author_email = "lewiyon@126.com",
 	url = "http://blog.csdn.net/younger_china",
     description = 'A iplib',
-	long_description = open(README, encoding='utf-8').read(),
     platforms = ['Linux'],
 	license = "LGPL",
     classifiers = CLASSIFIERS,
